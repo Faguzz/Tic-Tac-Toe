@@ -1,0 +1,86 @@
+.big.container{
+    @include flex-row-center();
+}
+
+h1{
+    text-align: center;
+}
+
+.the-current-players{
+    @include testing-border-1();
+    @include flex-row-center();
+    align-items: stretch;
+
+    & .sec-player-1,
+    & .sec-player-2{
+        width: 50%;
+        @include testing-border-2();
+        padding: 1.5rem;
+        @include flex-row-center();
+        position: relative;
+        
+    }
+
+    & .sec-player-1{
+
+        &_state{
+            position: absolute;
+            left: 0;
+            padding: 1.5rem;
+            @include testing-border-3();
+        }
+    }
+
+    & .sec-player-2{
+
+        &_state{
+            position: absolute;
+            right: 0;
+            padding: 1.5rem;
+            @include testing-border-3();
+        }
+    }
+}
+
+.the-game{
+    @include flex-column-center();
+    
+    &_field{
+        width: 30rem;
+        height: 30rem;
+        // @include testing-border-2;
+        margin: 2rem;
+        @include flex-variable(row, nowrap, flex-start, stretch, stretch);
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+
+        & div{
+            width: 30%;
+            flex-grow: 1;
+            // background-color: tomato;
+            @include flex-variable(column, nowrap, flex-start, stretch, stretch);
+
+            & p{
+                // flex-grow: 1;
+                height: 33.3%;
+                margin: 0;
+                font-size: 2rem;
+                @include flex-row-center();
+            }
+
+            & p:nth-of-type(2){
+                border: solid rgba(0,0,0,0.5);
+                border-width: 2px 0px;
+            }
+        }
+
+        &_col-2{
+            border: solid rgba(0,0,0,0.5);
+            border-width: 0px 2px;
+        }
+    }
+}
+
+.accessed-input{
+    border: none;
+    padding: 1rem;
+}

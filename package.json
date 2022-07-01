@@ -1,0 +1,13 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "built-the-game": "sass ./src/sass/main.scss ./public/tto.css --style=compressed --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
