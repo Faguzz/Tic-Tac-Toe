@@ -155,19 +155,75 @@ h1{
     & section{
         width: 100%;
         height: 50vh;
-        @include testing-border-1();
-        @include flex-variable(column, nowrap, space-evenly, center, center);
+        // @include testing-border-1();
+        font-size: 130%;
         position: absolute;
+        background-color: #4F3F68;
+        color: #C1B9D0;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.5) inset;
+        padding: 1rem;
         
 
         &:nth-of-type(1){
             left: 0;
             top:0;
+            @include flex-variable(row, nowrap, flex-start, center, center);
+            padding-left: 5rem;
         }
 
         &:nth-of-type(2){
             right: 0;
             bottom:0;
+            @include flex-variable(row, nowrap, flex-end, center, center);
+            padding-right: 5rem;
+        }
+    }
+
+    & .wrapper-input-place{
+        @include flex-variable(column, nowrap, space-evenly, center, center);
+        height: 100%;
+        margin: 0 5rem;
+
+    }
+
+    & .the-image-p1,
+    & .the-image-p2{
+        display: block;
+        height: 90%;
+    }
+
+    & input[type="text"]{
+        all: initial;
+        padding: 1rem;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 5rem;
+        color: #502750;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.5) inset;
+        font-family: black-op;
+        font-size: 105%;
+    }
+
+    & input[type="checkbox"]{
+        display: inline-block;
+        width: 3rem;  
+    }
+
+    & button{
+        
+        font-size: 120%;
+        padding: 1rem;
+        color: #B7C6EA;
+        border: 2px solid #B7C6EA;
+        width: 12rem;
+        text-align: center;
+        font-family: inherit;
+        box-shadow: 1px 3px 10px rgba(0,0,0,0.3);
+
+        &:hover{
+            box-shadow: 
+            1px 3px 10px rgba(0,0,0,0.5),
+            0 0 20px #B7C6EA;
         }
     }
 

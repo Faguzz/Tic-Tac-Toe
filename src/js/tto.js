@@ -272,7 +272,11 @@ const theRobotPlayer = (player)=> {
         if(
             randomField.dataset.isopen === 'true' && theGameIsOpen
         ){
-            randomField.innerHTML = "H"
+            // randomField.innerHTML = "H"
+            player === player1 ?
+            randomField.style.background = 'url(../../public/pics/sorceress-face.webp) center center / cover no-repeat' :
+            randomField.style.background = 'url(../../public/pics/skeletor-face.webp) center center / cover no-repeat'
+
             player.choose.push(randomFieldClassName)
 
             // theClickCount += 1

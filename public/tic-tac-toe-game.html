@@ -49,32 +49,39 @@ Set the Players
             <section class="sec-player-1" data-player="player-2">
                 <h2 class="hidden">Spieler 1</h2>
 
-                
+                <img class="the-image-p1" src="pics/she-ra-png.png" alt="She Ra">
 
-                <input type="text" name="player-1" id="input-player-1" class="sec-player-1_input" placeholder="Player 1" data-player="player-1">
+                <div class="wrapper-input-place">
+                    <input type="text" name="player-1" id="input-player-1" class="sec-player-1_input" placeholder="Player 1" data-player="player-1">
 
-                <div class="wrapper-robot-check" data-player="player-1">
-                    <input type="checkbox" name="check-robot" id="check-robot-1" data-player="player-1">
-                    <label for="check-robot">as Robot</label>
+                    <div class="wrapper-robot-check" data-player="player-1">
+                        <input type="checkbox" name="check-robot" id="check-robot-1" data-player="player-1">
+                        <label for="check-robot">as Robot</label>
+                    </div>
+    
+                    <button class="sec-player-1_button" onclick="setPlayer(this)" data-player="player-1">Enter</button>
                 </div>
-
-                <button class="sec-player-1_button" onclick="setPlayer(this)" data-player="player-1">Enter</button>
+           
             </section>
 
             <section class="sec-player-2" data-player="player-2">
                 <h2 class="hidden">Spieler 2</h2>
 
                 
-
-                <input type="text" name="player-2" id="input-player-2" class="sec-player-2_input" placeholder="Player 2" data-player="player-2">
+                <div class="wrapper-input-place">
+                    <input type="text" name="player-2" id="input-player-2" class="sec-player-2_input" placeholder="Player 2" data-player="player-2">
                 
 
-                <div class="wrapper-robot-check" data-player="player-2">
-                    <input type="checkbox" name="check-robot" id="check-robot-2" data-player="player-2">
-                    <label for="check-robot">as Robot</label>
+                    <div class="wrapper-robot-check" data-player="player-2">
+                        <input type="checkbox" name="check-robot" id="check-robot-2" data-player="player-2">
+                        <label for="check-robot">as Robot</label>
+                    </div>
+    
+                    <button class="sec-player-2_button" data-player="player-2" onclick="setPlayer(this)">Enter</button>
                 </div>
 
-                <button class="sec-player-2_button" data-player="player-2" onclick="setPlayer(this)">Enter</button>
+                <img class="the-image-p2" src="pics/skeletor-png.png" alt="skeletor">
+               
             </section>
 
         </section>

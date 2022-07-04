@@ -92,7 +92,7 @@ let
 
                     thisWrapper.style.display = 'none'
 
-                    thePlayer1Section.style.opacity = '0.5'
+                    // thePlayer1Section.style.opacity = '0.5'
 
                     nameFieldOfPlayerOne.innerHTML = player1.name
 
@@ -112,7 +112,7 @@ let
 
                     thisWrapper.style.display = 'none'
 
-                    thePlayer2Section.style.opacity = '0.5'
+                    // thePlayer2Section.style.opacity = '0.5'
 
                     nameFieldOfPlayerTwo.innerHTML = player2.name
 
