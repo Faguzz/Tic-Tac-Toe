@@ -1,14 +1,71 @@
 const
     scorePlayer_1 = document.querySelector('sec-player-1_state'),
     scorePlayer_2 = document.querySelector('sec-player-2_state'),
-    startButton = document.querySelector('.game-options_start'),
+    startButton = document.querySelector('.after-a-single-game_continue'),
 
     theFields = document.querySelectorAll('.the-game_field p'),
-    gameOptions = document.querySelector('.game-options')
 
-  
+    theRobotCheckboxes = document.querySelectorAll('input[type="checkbox"]'),
+    thePlayerInput = document.querySelectorAll('input[type="text"]'),
+    theRobotCheck = document.querySelectorAll('.wrapper-robot-check')
 
 
+
+const 
+    //horizontal
+    winSituation1 = ['f1', 'f2', 'f3'],
+    winSituation2 = ['f4', 'f5', 'f6'],
+    winSituation3 = ['f7', 'f8', 'f9'],
+
+    //vertikal
+    winSituation4 = ['f1', 'f4', 'f7'],
+    winSituation5 = ['f2', 'f5', 'f8'],
+    winSituation6 = ['f3', 'f6', 'f9'],
+
+    //diagonal
+    winSituation7 = ['f1', 'f5', 'f9'],
+    winSituation8 = ['f3', 'f5', 'f7']
+   
+
+
+// const player = {
+//     name: '',
+//     score: 0,
+//     choose: [],
+//     robot: false,
+//     legitimate: false
+
+// }
+
+// const 
+//     player1 = Object.create(player),
+//     player2 = Object.create(player)
+
+/**
+ * Wird mit Object.create eine neue Instanz eines
+ * Objektes instanziert und es ist ein Array vorhanden,
+ * wird mit push auf ein spezifisches Objekt angewendet,
+ * der Wert in alle Arrays gepusht
+ */
+
+
+const player1 = {
+    name: '',
+    score: 0,
+    choose: [],
+    robot: false,
+    legitimate: false
+
+}
+
+const player2 = {
+    name: '',
+    score: 0,
+    choose: [],
+    robot: false,
+    legitimate: false
+
+}
 
 let
     currentUser = player1,
@@ -16,6 +73,94 @@ let
     theWinner = false,
     theGameIsOpen = false
     theClickCount = 0
+
+
+
+//set a new player
+    const setPlayer = (player) => {
+        // console.log(player)
+        // console.log(player.dataset.player)
+        // console.log(theRobotCheckboxes)
+
+        const thisPlayerData = player.dataset.player
+
+        let 
+            thisCheckbox,
+            thisInput,
+            thisWrapper
+
+
+        theRobotCheckboxes.forEach( (item) => {
+            // console.log(item.dataset.player)
+            // console.log(thisPlayerData)
+
+            item.dataset.player === thisPlayerData ?
+            thisCheckbox = item :
+            console.log('')
+        })
+
+        thePlayerInput.forEach( (item) => {
+            // console.log(item.dataset.player)
+            // console.log(thisPlayerData)
+
+            item.dataset.player === thisPlayerData ?
+            thisInput = item :
+            console.log('')
+        })
+
+        theRobotCheck.forEach( (item) => {
+            // console.log(item.dataset.player)
+            // console.log(thisPlayerData)
+
+            item.dataset.player === thisPlayerData ?
+            thisWrapper = item :
+            console.log('')
+        })
+
+        // console.log(thisCheckbox.checked)
+        // console.log(thisInput.value)
+        // console.log(thisWrapper)
+
+        if(thisInput.value){
+            switch(thisPlayerData){
+
+                case 'player-1':
+                    player1.name = thisInput.value
+                    player1.isThePlayerARobot = thisCheckbox.checked
+                    player1.legitimate = true
+
+                    player.style.display = 'none'
+                    thisInput.setAttribute('readonly', true)
+                    thisInput.setAttribute('disabled', true)
+                    thisInput.classList.add('accessed-input')
+
+                    thisWrapper.style.display = 'none'
+
+                    break
+
+                case 'player-2':
+                    player2.name = thisInput.value
+                    player2.isThePlayerARobot = thisCheckbox.checked
+                    player2.legitimate = true
+
+                    player.style.display = 'none'
+                    thisInput.setAttribute('readonly', true)
+                    thisInput.setAttribute('disabled', true)
+                    thisInput.classList.add('accessed-input')
+
+                    thisWrapper.style.display = 'none'
+
+                    break
+            }
+        }
+        else{
+            alert('Sie müssen einen gültigen Namen eingeben')
+        }
+           
+        // console.log(player1)
+        // console.log(player2)
+    }
+
 
 
 //the start
@@ -56,9 +201,7 @@ const theGame = ()=> {
                 case player1:
                     if(field.dataset.isopen === 'true' && theGameIsOpen){
                         
-                        // field.innerHTML = "X"
-                        field.style.background = 'url(../../public/pics/sorceress-face.webp) center center / cover no-repeat'
-                        field.style.boxShadow = '1px 3px 6px #000 inset'
+                        field.innerHTML = "X"
                         player1.choose.push(thisClassName)
                         
                         
@@ -88,10 +231,7 @@ const theGame = ()=> {
 
                 case player2:
                     if(field.dataset.isopen === 'true' && theGameIsOpen){
-                        // field.innerHTML = "O"
-
-                        field.style.background = 'url(../../public/pics/skeletor-face.webp) center center / cover no-repeat'
-                        field.style.boxShadow = '1px 3px 6px #000 inset'
+                        field.innerHTML = "Y"
                         player2.choose.push(thisClassName)
                         
                         console.log(player2.name)
@@ -205,12 +345,9 @@ const theGame = ()=> {
                 ){
                     item.style.color = 'tomato'
                     console.log(item)
-                   
                 }
                 else{
-                    // item.style.color = 'transparent'
-                    item.style.backgroundImage = 'none'
-                    
+                    item.style.color = 'transparent'
                 }
                 
             })
@@ -235,11 +372,10 @@ const theWinnerIsFound = (player) =>{
 
     setTimeout(
        () => {
-        // alert('the Winner is player ' + player.name)
+        alert('the Winner is player ' + player.name)
         startButton.disabled = false
         theWinner = false
         location.reload()
-        gameOptions.style.display = 'flex'
 
         theFields.forEach( item => {
             item.innerHTML = ''
@@ -313,12 +449,9 @@ const theRobotPlayer = (player)=> {
 }
 
 const theStart = () => {
-    // alert('Das Spiel kann beginnen')
+    alert('Das Spiel kann beginnen')
     startButton.disabled = true
     console.log(theFields)
-    startButton.style.transform = 'rotateY(180deg)'
-    setTimeout( ()=> gameOptions.style.top = '-200%', 500)
-    // gameOptions.style.top = '-200%'
 
     theGame()
 }
@@ -348,10 +481,4 @@ const theStepWhenNoWinnerIsFound = (player, field) =>{
     theRobotPlayer(currentUser) :
     console.log('the robot is', currentUser)
 
-}
-
-
-const resetThePlayers = ()=> {
-    localStorage.clear()
-    location.reload()
 }

@@ -9,11 +9,20 @@ Resets
 body{
     margin: 0;
     padding: 0;
+    font-family: black-op;
 }
 
 .hidden{
     display: none;
 }
+
+button{
+    all: initial;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
 
 /*
 Mixins
@@ -56,4 +65,27 @@ Mixins
 
 @mixin testing-border-3{
     border: 1px dotted black;
+}
+
+@mixin glass{
+    
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.9px);
+    -webkit-backdrop-filter: blur(3.9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+
+/*
+Fonts
+---------*/
+
+@font-face {
+    font-family: black-op;
+    src: 
+        url(./font/blackopsone-regular-webfont.woff2),
+        url(./font/blackopsone-regular-webfont.woff);
 }
