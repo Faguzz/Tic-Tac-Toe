@@ -16,9 +16,9 @@
 
 
 
-<!-- 
-Show the Players
----------------------------------------------------------------------------------- -->
+
+<!-- Show the Players -->
+
 
             <section class="player-1-display">
                 <p class="sec-player-1_state" data-player="player-1">0</p>
@@ -35,13 +35,14 @@ Show the Players
                 <p class="the-name-of-player-2"></p>
 
             </section>
+           </section>
        </header>
 
 
 
-<!-- 
-Set the Players 
----------------------------------------------------------------------------------- -->
+
+<!-- Set the Players  -->
+
 
        <section class="set-the-players">
             <h2 class="hidden">Spieler festlegen</h2>
@@ -56,7 +57,7 @@ Set the Players
 
                     <div class="wrapper-robot-check" data-player="player-1">
                         <input type="checkbox" name="check-robot" id="check-robot-1" data-player="player-1">
-                        <label for="check-robot">as Robot</label>
+                        <label for="check-robot-1">as Robot</label>
                     </div>
     
                     <button class="sec-player-1_button" onclick="setPlayer(this)" data-player="player-1">Enter</button>
@@ -74,7 +75,7 @@ Set the Players
 
                     <div class="wrapper-robot-check" data-player="player-2">
                         <input type="checkbox" name="check-robot" id="check-robot-2" data-player="player-2">
-                        <label for="check-robot">as Robot</label>
+                        <label for="check-robot-1">as Robot</label>
                     </div>
     
                     <button class="sec-player-2_button" data-player="player-2" onclick="setPlayer(this)">Enter</button>
@@ -88,14 +89,14 @@ Set the Players
 
 
 
-<!-- 
-The Game
----------------------------------------------------------------------------------- -->
+
+<!-- The Game -->
+
 
        <section class="the-game">
             
 
-            <section class="the-game_field" id="the-game_field"">
+            <section class="the-game_field" id="the-game_field">
                 <div class="the-game_field-col-1">
                     <p class="f1" data-isopen="true"></p>
                     <p class="f4" data-isopen="true"></p>
@@ -117,9 +118,9 @@ The Game
        </section>
 
 
-<!-- 
-After a single Game
----------------------------------------------------------------------------------- -->
+
+<!-- After a single Game -->
+ 
 
     <section class="game-options">
         <button class="game-options_start" onclick="letTheGameStart(this)">Play</button>

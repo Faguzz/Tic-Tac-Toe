@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "built-the-game": "sass ./src/sass/main.scss ./public/tto.css --style=compressed --watch"
+    "built-the-game": "sass ./src/sass/main.scss ./public/tto.css --style=compressed --watch",
+    "built-landing": "sass ./src/sass/landing.scss ./public/landing.css --style=compressed --watch"
   },
   "keywords": [],
   "author": "",
