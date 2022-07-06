@@ -57,7 +57,7 @@ const theGame = ()=> {
                     if(field.dataset.isopen === 'true' && theGameIsOpen){
                         
                         // field.innerHTML = "X"
-                        field.style.background = 'url(../../public/pics/sorceress-face.webp) center center / cover no-repeat'
+                        field.style.background = 'url(./pics/sorceress-face.webp) center center / cover no-repeat'
                         field.style.boxShadow = '1px 3px 6px #000 inset'
                         player1.choose.push(thisClassName)
                         
@@ -90,7 +90,7 @@ const theGame = ()=> {
                     if(field.dataset.isopen === 'true' && theGameIsOpen){
                         // field.innerHTML = "O"
 
-                        field.style.background = 'url(../../public/pics/skeletor-face.webp) center center / cover no-repeat'
+                        field.style.background = 'url(./pics/skeletor-face.webp) center center / cover no-repeat'
                         field.style.boxShadow = '1px 3px 6px #000 inset'
                         player2.choose.push(thisClassName)
                         

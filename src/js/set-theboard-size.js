@@ -3,10 +3,18 @@ const
 
 
 let 
-    theBoardHeight = theBoard.clientHeight
+    theBoardHeight = theBoard.clientHeight,
+    theBoardWidth = theBoard.clientWidth,
+    windowHeight = window.innerHeight,
+    windowWidth = window.innerWidth
 
 
-theBoard.style.width = `${theBoardHeight}px`
+windowWidth > windowHeight ? 
+theBoard.style.width = `${theBoardHeight}px` :
+theBoard.style.height = `${theBoardWidth}px`
 
-console.log(theBoardHeight)
+console.log('the board height',theBoardHeight)
+console.log('the board width', theBoardWidth)
+console.log('window height', windowHeight)
+console.log('window width', windowWidth)
 
