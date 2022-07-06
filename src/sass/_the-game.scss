@@ -1,8 +1,8 @@
 .big-container{
     // @include flex-row-center();
     background: url(./pics/master-landscape.webp) center center / cover no-repeat;
-    width: 100vw;
-    height: 100vh;
+    // width: 100vw;
+    min-height: 100vh;
 
     // @media screen and (orientation: portrait) {
     //     @include flex-column-center();
@@ -25,6 +25,18 @@ h1{
     background-color: #4F3F68;
     // color: #07D070;
     color: #76D2EA;
+
+    @media screen and (orientation: portrait) {
+        height: auto;
+        position: fixed;
+        top:0;
+        left: 0;
+        height: 10rem;
+       
+        // box-shadow: 
+        // 0px 10px 20px hsla(263, 6%, 46%, 0.8),
+        // 1px 3px 5px hsla(263, 6%, 46%, 0.8) inset;
+    }
     
 
     & section{
@@ -37,21 +49,26 @@ h1{
 
         &:first-of-type{
             @media screen and (orientation: portrait){
-                position: fixed;
-                top: 0;
-                left: 0;
+                // position: fixed;
+                // top: 0;
+                // left: 0;
                 min-width: 100vw;
                 background-color: #4F3F68;
+                // background-color: rgba(0,0,0,0.1);
+                // padding: 0.2rem;
+                // height: auto;
               }
         }
 
         &:last-of-type{
             @media screen and (orientation: portrait){
-                position: fixed;
-                bottom: 0;
-                left: 0;
+                // position: fixed;
+                // bottom: 0;
+                // left: 0;
                 min-width: 100vw;  
                 background-color: #4F3F68;
+                // background-color: rgba(0,0,0,0.1);
+                // padding: 0.2rem;
             }   
         }
         
@@ -80,6 +97,13 @@ h1{
         // margin-left: 3rem;
         font-size: 120%;
         filter: drop-shadow(0 1px 10px #fff );
+
+
+        @media screen and (max-width: 700px) {
+            padding: 0.5rem;
+            font-size: 100%;
+            margin: 0;
+        }
     }
 
     & .sec-player-2_state{
@@ -88,6 +112,12 @@ h1{
         // margin-right: 3rem;
         font-size: 120%;
         filter: drop-shadow(0 1px 10px #fff );
+
+        @media screen and (max-width: 700px) {
+            padding: 0.5rem;
+            font-size: 100%;
+            margin: 0;
+        }
     }
 
     & .the-name-of-player-1,
@@ -99,15 +129,29 @@ h1{
         min-width: 60%;
         // margin-right: 1rem;
         box-shadow: 1px 3px 6px rgba(0,0,0,0.5) inset;
+
+        @media screen and (max-width: 700px) {
+            padding: 0.5rem;
+            font-size: 100%;
+            margin: 0;
+        }
         
     }
 
     & .the-name-of-player-1{
         border-radius: 0 5rem 5rem 0;
+
+        @media screen and (orientation: portrait){
+            border-radius: 0;
+          }
     }
 
     & .the-name-of-player-2{
         border-radius: 5rem 0 0 5rem;
+
+        @media screen and (orientation: portrait){
+            border-radius: 0;
+          }
     }
 
    
@@ -115,9 +159,14 @@ h1{
 
 .the-game{
     @include flex-column-center();
+
+    @media screen and (orientation: portrait){
+       @include flex-variable(row, nowrap, flex-start, center, center);
+      }
     
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 5rem);
+    position: relative;
     
     &_field{
         width: 30rem;
@@ -131,9 +180,23 @@ h1{
         // backdrop-filter: blur(8px);
 
         @media screen and (orientation: portrait){
-          width: 90vw;
+          width: 100vw;
           height: 5rem;
-          margin-top: 15vh;
+          margin: 0;
+            
+        //   position: fixed;
+        //   top: 10rem;
+        }
+
+        @media screen and (orientation: portrait) and (max-height: 800px) {
+           position: relative;
+           top: 5rem;
+        }
+
+        @media screen and (orientation: landscape) and (max-height: 450px){
+            position: fixed;
+            top: 5rem;
+            height: 60vh;
         }
 
         & div{
@@ -182,7 +245,7 @@ h1{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 10;
     background-color: #fff;
@@ -193,15 +256,29 @@ h1{
         position: sticky;
     }
 
-    // @media screen and (orientation: portrait) and (max-width: 600px){
-    //     @include flex-variable(row, nowrap, flex-start, stretch, stretch);
-    // }
+    @media screen and (orientation: portrait){
+        position: sticky;
+        min-height: 170vh;
+        @include flex-column-center();
+    }
 
- 
+    &_little-help{
+        display: none;
+
+        @media screen and (orientation: landscape) and (max-height: 450px){
+            display: block;
+            width: 100vw;
+            height: 5rem;
+            position: fixed;
+            top:0;
+            left: 0;
+            background-color: #4F3F68;
+        }
+    }
     
 
     & section{
-        width: 100%;
+        width: 100vw;
         height: 50vh;
         // @include testing-border-1();
         font-size: 130%;
@@ -212,20 +289,22 @@ h1{
         padding: 1rem;
 
         @media screen and (orientation: landscape) and (max-height: 450px){
-            height: 100vh;
+            min-height: 100vh;
             
         }
 
         @media screen and (orientation: portrait) and (max-width: 610px){
             font-size: 100%;
+            min-height: 85vh;
+            
             }
 
             // @media screen and (orientation: portrait) and (max-width: 530px){
             //     padding: 1rem;
             //     }
 
-        // @media screen and (orientation: portrait) and (max-width: 600px){
-        //     min-height: 50vh;
+        // @media screen and (orientation: portrait){
+        //     padding: 1rem;
             
         //     }
        
@@ -240,17 +319,26 @@ h1{
                 @include flex-variable(row, nowrap, space-around, center, center);
             }
 
-            @media screen and (orientation: portrait) and (max-width: 870px){
-               padding-left: 0.5rem; 
-               @include flex-variable(row, nowrap, space-around, center, center); 
-            }
+            // @media screen and (orientation: portrait) and (max-width: 870px){
+            //    padding-left: 0.5rem; 
+            //    @include flex-variable(row, nowrap, space-around, center, center); 
+            // }
 
-            // @media screen and (orientation: portrait) and (max-width: 600px){
-            //     padding: 0.5rem; 
-            //     @include flex-variable(column, nowrap, flex-start, center, center); 
-            //  }
+            @media screen and (orientation: portrait){
+                padding: 1rem;
+                @include flex-variable(column, nowrap, flex-start, center, center);
+                position: relative;
+                top:0;
+                left:0;
+                right: 0; 
+                flex-grow: 1;
+                
+                padding-bottom: 20rem;
+             }
 
-            
+             @media screen and (orientation: portrait) and (max-height: 1000px) {
+                padding-bottom: 5rem;
+             }
 
         }
 
@@ -264,15 +352,25 @@ h1{
                 @include flex-variable(row, nowrap, space-around, center, center);
             }
 
-            @media screen and (orientation: portrait) and (max-width: 870px){
-                padding-right: 1rem; 
-                @include flex-variable(row, nowrap, space-around, center, center);
+            // @media screen and (orientation: portrait) and (max-width: 870px){
+            //     padding-right: 1rem; 
+            //     @include flex-variable(row, nowrap, space-around, center, center);
+            //  }
+
+            @media screen and (orientation: portrait){
+                padding: 1rem;
+                @include flex-variable(column, nowrap, flex-start, center, center);
+                position: relative;
+                top:0;
+                left:0;
+                right: 0; 
+                flex-grow: 1;
+                padding-bottom: 18rem;
              }
 
-            //  @media screen and (orientation: portrait) and (max-width: 600px){
-            //     padding: 0.5rem; 
-            //     @include flex-variable(column, nowrap, flex-start, center, center); 
-            //  }
+             @media screen and (orientation: portrait) and (max-height: 1000px) {
+                padding-bottom: 5rem;
+             }
         }
     }
 
@@ -341,6 +439,10 @@ h1{
             padding: 0.5rem;
             }
 
+        @media screen and (orientation: portrait){
+           margin: 1rem;
+            }
+
        
        
     }
@@ -360,7 +462,7 @@ h1{
             transform: scale(0.8);
         }
 
-        @media screen and (orientation: portrait) and (max-width: 610px){
+        @media screen and (orientation: portrait){
             margin: 2rem 0 ;
             }
     }
@@ -385,6 +487,10 @@ h1{
         @media screen and (orientation: landscape) and (max-height: 520px){
             transform: scale(0.8);
         }
+
+        @media screen and (orientation: portrait){
+            margin: 1rem 0 5rem;
+             }
     }
 
 }
@@ -394,7 +500,7 @@ h1{
     position: fixed;
     top: 5rem;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 5rem);
     background-color: #fff;
     @include flex-variable(column, nowrap, space-evenly, center, center);
@@ -408,6 +514,11 @@ h1{
         // z-index: 10;
         top: 0;
         width: 100vw;
+    }
+
+    @media screen and (orientation: portrait){
+        height: 100vh;
+        top: 0;
     }
 
     & button{

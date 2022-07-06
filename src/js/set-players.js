@@ -136,8 +136,9 @@ let
 
 const pushThePlayersOut = () => {
     // alert('juhu')
-    thePlayer1Section.style.left = '-200vh'
-    thePlayer2Section.style.right = '-200vh'
-    setThePlayerSection.style.opacity = '0'
-    setThePlayerSection.style.zIndex = '-10'
+    // thePlayer1Section.style.left = '-200vh'
+    // thePlayer2Section.style.right = '-200vh'
+    // setThePlayerSection.style.opacity = '0'
+    // setThePlayerSection.style.zIndex = '-10'
+    setThePlayerSection.style.display = 'none'
 }

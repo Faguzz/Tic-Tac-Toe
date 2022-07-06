@@ -274,8 +274,8 @@ const theRobotPlayer = (player)=> {
         ){
             // randomField.innerHTML = "H"
             player === player1 ?
-            randomField.style.background = 'url(../../public/pics/sorceress-face.webp) center center / cover no-repeat' :
-            randomField.style.background = 'url(../../public/pics/skeletor-face.webp) center center / cover no-repeat'
+            randomField.style.background = 'url(./pics/sorceress-face.webp) center center / cover no-repeat' :
+            randomField.style.background = 'url(./pics/skeletor-face.webp) center center / cover no-repeat'
 
             player.choose.push(randomFieldClassName)
 
