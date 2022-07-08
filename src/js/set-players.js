@@ -92,8 +92,7 @@ let
 
                     thisWrapper.style.display = 'none'
 
-                    // thePlayer1Section.style.opacity = '0.5'
-
+    
                     nameFieldOfPlayerOne.innerHTML = player1.name
 
                     areAllSettingsDoneP1 = true
@@ -111,8 +110,6 @@ let
                     thisInput.classList.add('accessed-input')
 
                     thisWrapper.style.display = 'none'
-
-                    // thePlayer2Section.style.opacity = '0.5'
 
                     nameFieldOfPlayerTwo.innerHTML = player2.name
 
@@ -135,10 +132,5 @@ let
 
 
 const pushThePlayersOut = () => {
-    // alert('juhu')
-    // thePlayer1Section.style.left = '-200vh'
-    // thePlayer2Section.style.right = '-200vh'
-    // setThePlayerSection.style.opacity = '0'
-    // setThePlayerSection.style.zIndex = '-10'
     setThePlayerSection.style.display = 'none'
 }

@@ -279,25 +279,16 @@ const theRobotPlayer = (player)=> {
 
             player.choose.push(randomFieldClassName)
 
-            // theClickCount += 1
-            // checkTheCount()
-
             checkTheWinSituation(player.choose)
     
             theWinner ?
             theWinnerIsFound(player) :
             theStepWhenNoWinnerIsFound(player, randomField)
+            
             // console.log('player H is current not the winner')
-
             // console.log('player h ', player)
-            // // console.log('ws1', ws1)
-            // randomField.setAttribute('data-isopen', 'false')
-
             // console.log('the ai chooses', player.choose)
 
-            // player === player1 ?
-            // currentUser = player2 :
-            // currentUser = player1
             theSettingIsAlright = true
             
         }
@@ -317,12 +308,11 @@ const theRobotPlayer = (player)=> {
 }
 
 const theStart = () => {
-    // alert('Das Spiel kann beginnen')
+    // console.log('Das Spiel kann beginnen')
     startButton.disabled = true
     console.log(theFields)
     startButton.style.transform = 'rotateY(180deg)'
     setTimeout( ()=> gameOptions.style.top = '-200%', 500)
-    // gameOptions.style.top = '-200%'
 
     theGame()
 }

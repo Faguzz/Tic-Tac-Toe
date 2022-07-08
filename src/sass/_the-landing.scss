@@ -14,7 +14,6 @@ body{
 
 .tic-tac{
     filter: drop-shadow(0 1px 1px rgba(0,0,0,0.5)) drop-shadow(0 0px 10px #B7C6EA);
-    // filter: drop-shadow(0 0px 10px #B7C6EA);
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: text-comes 5s 5.5s linear forwards;
@@ -75,14 +74,12 @@ a{
     color:#B7C6EA;
     padding: 1rem;
     width: 10rem;
-    // border: 1px solid #B7C6EA;
     text-align: center;
     background-color: #4F3F68;
     box-shadow: 1px 3px 6px rgba(0,0,0,0.9);
     position: fixed;
     bottom: 45vh;
     cursor: pointer;
-    // border-radius: 1rem;
     opacity: 0;
     animation: slide-in 1s 7.5s linear forwards;
     transition: transform 0.3s;
