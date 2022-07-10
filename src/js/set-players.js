@@ -33,6 +33,10 @@ let
     areAllSettingsDoneP1 = false,
     areAllSettingsDoneP2 = false
 
+const clearPlaceholder = (element)=>{
+    element.placeholder = ''
+}
+
 //set a new player
     const setPlayer = (player) => {
         // console.log(player)

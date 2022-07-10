@@ -322,6 +322,8 @@ const checkTheCount = () =>{
     if(theClickCount === 9){
         theGameIsOpen = false
         alert('Unentschieden')
+        localStorage.setItem("Player1", JSON.stringify(player1))
+        localStorage.setItem("Player2", JSON.stringify(player2))
         setTimeout( ()=> location.reload(), 500)
     }
 }
